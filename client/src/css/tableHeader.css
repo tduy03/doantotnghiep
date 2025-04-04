@@ -1,0 +1,22 @@
+.table-container {
+  height: 100%;
+}
+
+.styled-table {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 5px;
+  text-align: left;
+}
+
+.styled-table td {
+  opacity: 70%;
+}
+
+.styled-table th {
+  font-weight: bold;
+}

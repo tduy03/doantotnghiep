@@ -1,0 +1,36 @@
+.product-carousel {
+    user-select: none;
+    /* Ngăn chặn chọn văn bản */
+    -webkit-user-select: none;
+    /* Ngăn chặn chọn văn bản trên Webkit */
+    -webkit-user-drag: none;
+    /* Ngăn chặn kéo chuột trên Webkit */
+}
+
+.product-carousel img,
+.product-carousel a {
+    -webkit-user-drag: none;
+    /* Ngăn chặn kéo chuột trên ảnh và thẻ a */
+}
+
+.product-item a {
+    pointer-events: auto;
+    /* Bật sự kiện chuột cho các thẻ a */
+}
+
+.sale-badge {
+    @apply bg-red-500 text-white px-2 py-1 text-sm font-bold rounded-full;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}

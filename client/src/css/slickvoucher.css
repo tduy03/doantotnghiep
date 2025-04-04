@@ -1,0 +1,33 @@
+/* VOUCHER */
+.custom-slider .slick-prev,
+.custom-slider .slick-next {
+  background-color: #f56c6c;
+  /* Màu nền mũi tên */
+  color: white;
+  /* Màu chữ (hoặc icon) của mũi tên */
+  border-radius: 50%;
+  /* Đặt các mũi tên thành hình tròn */
+  width: 20px;
+  height: 20px;
+}
+
+.custom-slider .slick-prev {
+  left: -20px;
+  /* Vị trí mũi tên trái */
+}
+
+.custom-slider .slick-next {
+  right: -20px;
+  /* Vị trí mũi tên phải */
+}
+
+/* Tạo khoảng cách giữa các phần tử */
+.custom-slider .slick-slide {
+  margin: 0 10px;
+  /* Khoảng cách giữa các slide */
+}
+
+.custom-slider .slick-track {
+  display: flex;
+  /* Đảm bảo các slide được căn chỉnh theo chiều ngang */
+}

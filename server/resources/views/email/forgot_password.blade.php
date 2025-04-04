@@ -1,0 +1,1 @@
+ấn vào đây để lấy mật khẩu  <a href="http://localhost:5173/ResetPassword/{{ $token }}">Tại đây</a>

@@ -1,0 +1,75 @@
+.containerr {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+body {
+  margin: auto;
+  padding: 0;
+  font-size: 16px;
+  font-family: "MyFont", sans-serif;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Đối với Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Đối với IE và Edge Legacy */
+input[type="number"] {
+  -ms-appearance: none;
+}
+
+.product-carousel {
+  user-select: none;
+  /* Ngăn chặn chọn văn bản */
+  -webkit-user-select: none;
+  /* Ngăn chặn chọn văn bản trên Webkit */
+  -webkit-user-drag: none;
+  /* Ngăn chặn kéo chuột trên Webkit */
+}
+
+.product-carousel img,
+.product-carousel a {
+  -webkit-user-drag: none;
+  /* Ngăn chặn kéo chuột trên ảnh và thẻ a */
+}
+
+.product-item a {
+  pointer-events: auto;
+  /* Bật sự kiện chuột cho các thẻ a */
+}
+/* Tùy chỉnh thanh cuộn cho các trình duyệt hỗ trợ */
+::-webkit-scrollbar {
+  width: 7px; /* Độ rộng của thanh cuộn */
+  height: 8px; /* Độ cao của thanh cuộn ngang */
+}
+
+/* Tùy chỉnh phần thanh cuộn */
+::-webkit-scrollbar-thumb {
+  background-color: #bbbbbb; /* Màu sắc của thanh cuộn */
+  border-radius: 8px; /* Góc bo tròn cho thanh cuộn */
+  border: 2px solid #f1f1f1; /* Viền quanh thanh cuộn */
+}
+
+/* Tùy chỉnh khi hover lên thanh cuộn */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #45a049; /* Thay đổi màu sắc khi hover */
+}
+
+/* Tùy chỉnh phần trục cuộn */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Màu nền của thanh cuộn */
+  border-radius: 8px; /* Góc bo tròn cho nền */
+}
+
+/* Tùy chỉnh thanh cuộn ngang */
+::-webkit-scrollbar-horizontal {
+  height: 8px;
+}
