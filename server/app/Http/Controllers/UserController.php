@@ -18,6 +18,10 @@ class UserController extends Controller
         return view('Admin.user.index', compact('user'));
     }
 
+    public function index1(){
+        return view('Admin.admin.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -119,7 +119,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
       {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
 
       {/* Option 1: Momo */}
-      {/* <div
+      <div
         onClick={() => setSelectedOption("momo")}
         className={`border rounded-lg p-4 mb-4 cursor-pointer ${selectedOption === "momo" ? "border-blue-500 bg-blue-50" : "border-gray-300"}`}
       >
@@ -148,7 +148,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
             <p>Sau khi nhấp vào “Thanh toán ngay”, bạn sẽ được chuyển hướng đến Mua trước trả sau qua Momo để hoàn tất việc mua hàng một cách an toàn.</p>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Option 2: VNPAY */}
       <div

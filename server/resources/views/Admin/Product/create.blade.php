@@ -37,11 +37,27 @@
                                             <label for="simpleinput" class="form-label">Giá</label>
                                             <input type="text" id="simpleinput"
                                                 class="form-control  @error('price') is-invalid @enderror" name="price"
-                                                value="{{ old('price') }}" placeholder="price ">
+                                                value="{{ old('price') }}" placeholder="price "
+                                                oninput="formatPrice(this)" onblur="removeCommas(this)">
                                             @error('price')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
                                         </div>
+
+                                        <script>
+                                            // Hàm để thêm dấu phẩy khi người dùng nhập giá
+                                            function formatPrice(input) {
+                                                let value = input.value.replace(/[^0-9]/g, ''); // Loại bỏ tất cả các ký tự không phải số
+                                                value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Thêm dấu phẩy vào mỗi 3 chữ số
+                                                input.value = value;
+                                            }
+
+                                            // Hàm để loại bỏ dấu phẩy khi gửi form (trước khi lưu vào cơ sở dữ liệu)
+                                            function removeCommas(input) {
+                                                input.value = input.value.replace(/,/g, ''); // Loại bỏ dấu phẩy
+                                            }
+                                        </script>
+                                        
                                         <div class="mb-3">
                                             <label for="simpleinput" class="form-label">Ảnh </label>
                                             <input type="file" id="simpleinput"
@@ -85,7 +101,8 @@
                                             <input type="text" id="simpleinput"
                                                 class="form-control  @error('price_sale') is-invalid @enderror"
                                                 name="price_sale" value="{{ old('price_sale') }}"
-                                                placeholder="price_sale ">
+                                                placeholder="price_sale "
+                                                oninput="formatPrice(this)" onblur="removeCommas(this)">
                                             @error('price_sale')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror

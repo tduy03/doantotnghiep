@@ -259,10 +259,6 @@ const Checkout = () => {
         }
     }, [shippingInfo, total, shippingCost]);
 
-
-
-
-
     useEffect(() => {
         const checkResponseCodeMomo = () => {
             const queryString = location.search;
@@ -479,9 +475,13 @@ const Checkout = () => {
                                                             onChange={handleChange}
                                                         >
                                                             <MenuItem value=''>Chọn mã giảm giá</MenuItem>
-                                                            {promotionsUser.map((item) => (
-                                                                <MenuItem value={item.code}>{item.code}</MenuItem>
-                                                            ))}
+                                                                {Array.isArray(promotionsUser) && promotionsUser.length > 0 && promotionsUser.map((item, index) => (
+                                                                    item && item.code ? (
+                                                                        <MenuItem key={index} value={item.code}>
+                                                                            {item.code}
+                                                                        </MenuItem>
+                                                                    ) : null
+                                                                ))}
                                                         </Select>
                                                     </FormControl>
 

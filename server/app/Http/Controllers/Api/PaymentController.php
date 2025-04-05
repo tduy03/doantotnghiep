@@ -47,7 +47,20 @@ class PaymentController extends Controller
         $requestId = time() . "";
         $requestType = "payWithATM";
 
-        $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
+        $rawHashArr = [
+            'accessKey' => $accessKey,
+            'amount' => $amount,
+            'extraData' => $extraData,
+            'ipnUrl' => $ipnUrl,
+            'orderId' => $orderId,
+            'orderInfo' => $orderInfo,
+            'partnerCode' => $partnerCode,
+            'redirectUrl' => $redirectUrl,
+            'requestId' => $requestId,
+            'requestType' => $requestType,
+        ];
+        
+        $rawHash = urldecode(http_build_query($rawHashArr));
         $signature = hash_hmac("sha256", $rawHash, $secretKey);
 
         $data = array(
@@ -107,13 +120,14 @@ class PaymentController extends Controller
         } else {
             return response()->json([
                 'error' => true,
-    'message' => 'Không tìm thấy URL thanh toán'
+            'message' => 'Không tìm thấy URL thanh toán'
             ], 400);
         }
     }
 
     public function vn_pay(Request $request){
         $data=$request->all();
+        // dd($data);
         error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
