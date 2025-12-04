@@ -2,7 +2,7 @@ Mô tả dự án
 - Website thương mại điện tử chuyên về thời trang, tập trung vào tối ưu trải nghiệm người dùng, cung cấp tính năng mua sắm đầy đủ, hệ thống quản trị mạnh mẽ và tích hợp Chatbox AI hỗ trợ tư vấn sản phẩm theo hình ảnh – giá – mô tả.
 
 Công nghệ sử dụng
-- Frontend
+Frontend
 - ReactJS
 - Redux Toolkit (quản lý trạng thái)
 - TailwindCSS
